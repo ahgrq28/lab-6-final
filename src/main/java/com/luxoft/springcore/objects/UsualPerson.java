@@ -9,11 +9,18 @@ public class UsualPerson implements Person {
     
 	private int age;
 	private boolean isProgrammer;
-    
+
     public UsualPerson(String name, int age, City city) {
+        this.name = name;
+        this.age = age;
+        this.city = city;
+    }
+
+    public UsualPerson(String name, int age, City city, int distanceTravelled) {
     	this.name = name;
     	this.age = age;
     	this.city = city;
+        this.distanceTravelled = distanceTravelled;
     }
 
     public int getAge() {

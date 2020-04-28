@@ -5,5 +5,80 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 				http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+	<context:property-placeholder location="classpath:locations.properties"/>
+
+	<bean id="russianPerson" class="com.luxoft.springcore.objects.UsualPerson">
+		<constructor-arg value="${russianPerson.name}"/>
+		<constructor-arg value="${russianPerson.age}"/>
+		<constructor-arg ref="${russianPerson.city}"/>
+		<constructor-arg value="${russianPerson.distanceTravelled}"/>
+	</bean>
+
+	<bean id="bulgarianPerson" class="com.luxoft.springcore.objects.UsualPerson">
+		<constructor-arg value="${bulgarianPerson.name}"/>
+		<constructor-arg value="${bulgarianPerson.age}"/>
+		<constructor-arg ref="${bulgarianPerson.city}"/>
+		<constructor-arg value="${bulgarianPerson.distanceTravelled}"/>
+	</bean>
+
+	<bean id="operatorsBean" class="com.luxoft.springcore.objects.Operators">
+		<property name="ageComparisonTest" value="true"/>
+		<property name="distanceComparisonTest" value="true"/>
+	</bean>
+
+	<bean id="moscow" class="com.luxoft.springcore.objects.City">
+		<property name="id" value="1"/>
+		<property name="name" value="Moscow"/>
+		<property name="country" ref="russia"/>
+	</bean>
+
+	<bean id="vienna" class="com.luxoft.springcore.objects.City">
+		<property name="id" value="2"/>
+		<property name="name" value="Vienna"/>
+		<property name="country" ref="austria"/>
+	</bean>
+
+	<bean id="sofia" class="com.luxoft.springcore.objects.City">
+		<property name="id" value="3"/>
+		<property name="name" value="Sofia"/>
+		<property name="country" ref="bulgaria"/>
+	</bean>
+
+	<bean id="krakow" class="com.luxoft.springcore.objects.City">
+		<property name="id" value="4"/>
+		<property name="name" value="Krakow"/>
+		<property name="country" ref="poland"/>
+	</bean>
+
+	<bean id="warsaw" class="com.luxoft.springcore.objects.City">
+		<property name="id" value="5"/>
+		<property name="name" value="Warsaw"/>
+		<property name="country" ref="poland"/>
+	</bean>
+
+	<bean id="russia" class="com.luxoft.springcore.objects.Country">
+		<property name="id" value="1"/>
+		<property name="name" value="${russia.name}"/>
+		<property name="codeName" value="${russia.codeName}"/>
+	</bean>
+
+	<bean id="austria" class="com.luxoft.springcore.objects.Country">
+		<property name="id" value="2"/>
+		<property name="name" value="${austria.name}"/>
+		<property name="codeName" value="${austria.codeName}"/>
+	</bean>
+
+	<bean id="bulgaria" class="com.luxoft.springcore.objects.Country">
+		<property name="id" value="3"/>
+		<property name="name" value="${bulgaria.name}"/>
+		<property name="codeName" value="${bulgaria.codeName}"/>
+	</bean>
+
+	<bean id="poland" class="com.luxoft.springcore.objects.Country">
+		<property name="id" value="4"/>
+		<property name="name" value="${poland.name}"/>
+		<property name="codeName" value="${poland.codeName}"/>
+	</bean>
 				
 </beans>
